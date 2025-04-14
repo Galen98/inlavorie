@@ -6,7 +6,7 @@ controllers:
 
 login:
   path: /login
-  controller: App\Controller\AuthController::index
+  controller: App\Controller\AuthController::indexLogin
 
 home:
   path: /

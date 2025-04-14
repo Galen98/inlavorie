@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}inLavorie:Bussines Core Software Terbaik dan Terlengkap - {{ title|default('inLavorie') }}{% endblock %}
+{% block body %}
+<style>
+body {
+    background: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #dc3545;
+}
+
+.logo {
+    width: 50px;
+    margin-bottom: 10px;
+}
+</style>
+
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <div class="card p-4">
+          <div class="text-center mb-4">
+            <img src="{{ asset('img/head-logo.png') }}" alt="Logo" class="logo">
+            <h4 class="fw-bold text-danger">inLavorie</h4>
+            <p class="text-muted mb-0">Silakan masuk untuk melanjutkan</p>
+          </div>
+          <form method="post" action="">
+            <div class="mb-3">
+              <label for="username" class="form-label">Email / Username</label>
+              <input type="text" class="form-control" id="username" name="_username" required autofocus>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Kata Sandi</label>
+              <input type="password" class="form-control" id="password" name="_password" required>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="remember" name="_remember_me">
+              <label class="form-check-label" for="remember">Ingat saya</label>
+            </div>
+            <button type="submit" class="btn btn-danger">Masuk</button>
+          </form>
+          <div class="text-center mt-3">
+            <small>Belum punya akun? <a href="#">Daftar sekarang</a></small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

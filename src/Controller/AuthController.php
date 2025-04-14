@@ -10,8 +10,16 @@ final class AuthController extends AbstractController
 {
     public function index(): Response
     {
-        return $this->render('auth/index.html.twig', [
-            'controller_name' => 'AuthController',
+        return $this->render('auth/login.html.twig', [
+            'title' => 'Login',
+        ]);
+    }
+
+    //login view
+    public function indexLogin(): Response
+    {
+        return $this->render('auth/login.html.twig', [
+            'title' => 'Login',
         ]);
     }
 }

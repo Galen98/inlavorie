@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}inLavorie:Bussines Core Software Terbaik dan Terlengkap - {{ title|default('inLavorie') }}{% endblock %}
+{% block stylesheets %}
+<link href="{{ asset('css/app/auth.css') }}" rel="stylesheet">
+{% endblock %}
+{% block body_class %}auth-page{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-lg-4">
+            <div class="card p-4">
+                <div class="text-center mb-4">
+                  <img src="{{ asset('img/head-logo.png') }}" alt="Logo" class="logo">
+                  <h4 class="fw-bold text-danger">inLavorie</h4>
+                  <div class="alert alert-info" role="alert">
+                    Daftar sekarang, dapatkan free trial 30 Hari dan klaim keuntungan lainnya!
+                  </div>
+                </div>
+                <form method="post" action="">
+                    <div class="mb-3">
+                      <label for="username" class="form-label">Nama Anda</label>
+                      <input type="text" class="form-control" id="username" name="_username" required autofocus>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="_email" required autofocus>
+                    </div>
+                    <div class="mb-3">
+                        <label for="noHp" class="form-label">Nomor Handphone</label>
+                        <input type="text" maxlength="15" pattern="[0-9]+" class="form-control" id="_noHp" name="_noHp" required autofocus>
+                    </div>
+                    <div class="mb-3 position-relative">
+                        <label for="password" class="form-label">Kata Sandi</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="password" name="_password" required>
+                            <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>
+                    </div>                    
+                </div>
+            </form>
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script src="{{ asset('js/auth.js') }}"></script>
+{% endblock %}

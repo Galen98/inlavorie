@@ -4,9 +4,16 @@ controllers:
         namespace: App\Controller
     type: attribute
 
+# auth routes
 login:
   path: /login
   controller: App\Controller\AuthController::indexLogin
+  methods: [GET]
+
+register:
+  path: /register
+  controller: App\Controller\AuthController::indexRegister
+  methods: [GET]
 
 home:
   path: /

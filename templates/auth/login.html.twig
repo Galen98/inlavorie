@@ -4,7 +4,7 @@
 {% block stylesheets %}
 <link href="{{ asset('css/app/auth.css') }}" rel="stylesheet">
 {% endblock %}
-
+{% block body_class %}auth-page{% endblock %}
 {% block body %}
 <div class="container">
     <div class="row justify-content-center">
@@ -13,16 +13,24 @@
           <div class="text-center mb-4">
             <img src="{{ asset('img/head-logo.png') }}" alt="Logo" class="logo">
             <h4 class="fw-bold text-danger">inLavorie</h4>
-            <p class="text-muted mb-0">Silakan masuk untuk melanjutkan</p>
+            <div class="alert alert-info" role="alert">
+              Kelola bisnismu dengan inLavorie.<br/>
+              masuk untuk melanjutkan
+            </div>
           </div>
           <form method="post" action="">
             <div class="mb-3">
               <label for="username" class="form-label">Email / Username</label>
               <input type="text" class="form-control" id="username" name="_username" required autofocus>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 position-relative">
               <label for="password" class="form-label">Kata Sandi</label>
-              <input type="password" class="form-control" id="password" name="_password" required>
+              <div class="input-group">
+                  <input type="password" class="form-control" id="password" name="_password" required>
+                  <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                      <i class="bi bi-eye"></i>
+                  </button>
+              </div>
             </div>
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="remember" name="_remember_me">
@@ -31,10 +39,13 @@
             <button type="submit" class="btn btn-danger">Masuk</button>
           </form>
           <div class="text-center mt-3">
-            <small>Belum punya akun? <a href="#">Daftar sekarang</a></small>
+            <small>Belum punya akun? <a href="{{path('register')}}">Coba Gratis sekarang!</a></small>
           </div>
         </div>
       </div>
     </div>
   </div>
+{% endblock %}
+{% block scripts %}
+  <script src="{{ asset('js/auth.js') }}"></script>
 {% endblock %}
